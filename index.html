@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>about</title>
+    <!-- jQuery.jsの読み込み -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+    <script>
+      // <!-- スムーズスクロール部分の記述 -->
+      $(function(){
+        //jQuery
+        $(".nav_icon").hide();
+        $(".menubtn").click(function(){//メニューボタンをクリックしたとき
+            $(".nav_icon").toggle(300);//0.3秒で表示したり非表示にしたりする
+        });
+
+        // #で始まるアンカーをクリックした場合に処理
+        $('a[href^=#]').click(function() {
+            // スクロールの速度
+            var speed = 400; // ミリ秒
+            // アンカーの値取得
+            var href= $(this).attr("href");
+            // 移動先を取得
+            var target = $(href == "#" || href == "" ? 'html' : href);
+            // 移動先を数値で取得
+            var position = target.offset().top;
+            // スムーススクロール
+            $('body,html').animate({scrollTop:position}, speed, 'swing');
+            return false;
+        });
+        // <!-- ページをふわっと出す記述 -->
+        // フェードインで表示するコンテンツをdisplay:noneで非表示にする
+        $('head').append('<style type="text/css">#wrapper_nav{display:none;}</style>');
+        $(function() {
+          // フェードインidを指定と表示速度ミリ秒
+          $('#wrapper_nav').fadeIn(300);
+          // ページ遷移時にフェードアウトさせるclickイベントの要素を指定。ここではli a
+          $('li a, a.windowFade').click(function() {
+            var url = $(this).attr("href");
+            // アニメーションで透過0になるまでフェードアウトさせる。速度ミリ秒
+            $('#wrapper_nav').animate({"opacity": 0}, 1000, function() {
+              location.href = url;
+            });
+            return false;
+          });
+        });
+        // <!-- ページをふわっと出す記述 -->
+
+        // <!-- ページをふわっと出す記述 -->
+        // フェードインで表示するコンテンツをdisplay:noneで非表示にする
+         $('head').append('<style type="text/css">#wrapper{display:none;}</style>');
+        $(function() {
+          // フェードインidを指定と表示速度ミリ秒
+          $('#wrapper').fadeIn(600);
+          // ページ遷移時にフェードアウトさせるclickイベントの要素を指定。ここではli a
+          $('li a, a.windowFade').click(function() {
+            var url = $(this).attr("href");
+            // アニメーションで透過0になるまでフェードアウトさせる。速度ミリ秒
+            $('#wrapper').animate({"opacity": 0}, 300, function() {
+              location.href = url;
+            });
+            return false;
+          });
+        });
+        // <!-- ページをふわっと出す記述 -->
+
+         $('.sp_btn').click(function(){
+          if($(this).hasClass('open') == false){
+            $(this).attr('src', 'img/sp_menu_close.svg').addClass('open');
+          }else{
+            $(this).attr('src', 'img/sp_menu.svg').removeClass('open');
+          }
+        });
+
+           /**
+           * 到達したら要素を表示させる
+           */
+          function showElementAnimation() {
+
+          var element = document.getElementsByClassName('js-animation');
+          if(!element) return; // 要素がなかったら処理をキャンセル
+
+          var showTiming = window.innerHeight > 500 ? 100 : 40; // 要素が出てくるタイミングはここで調整
+          var scrollY = window.pageYOffset;
+          var windowH = window.innerHeight;
+
+          for(var i=0;i<element.length;i++) { var elemClientRect = element[i].getBoundingClientRect(); var elemY = scrollY + elemClientRect.top; if(scrollY + windowH - showTiming > elemY) {
+              element[i].classList.add('is-show');
+            } else if(scrollY + windowH < elemY) {
+              // 上にスクロールして再度非表示にする場合はこちらを記述
+              element[i].classList.remove('is-show');
+            }
+          }
+        }
+        showElementAnimation();
+        window.addEventListener('scroll', showElementAnimation);
+
+      });
+
+      //jQuery
+
+    </script>
+    <noscript>
+      <style>
+      .js-animation {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0px);
+      }
+      </style>
+    </noscript>
+  </head>
+    <body>
+    <nav class="nav_pc effect-fade" >
+      <div class="nav_sp_logo">
+        <a class="nav_logo" href="../index.html"><h1><img src="img/logo.svg"></h1></a>
+      </div>
+      <ul class="groval-nav">
+        <li class="nav-item">
+          <a href="index.html" class="nav_item">トップページ</a>
+        </li>
+        <li class="nav-item">
+          <a href="service/index.html" class="nav_item">事業について</a>
+        </li>
+        <li class="nav-item">
+          <a href="about/index.html" class="nav_item">会社について</a>
+        </li>
+        <li class="nav-item" >
+          <a href="cases/index.html" class="nav_item">過去事例</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a href="event/index.html" class="nav_item">イベント</a>
+        </li> -->
+        <!-- <li class="nav-item">
+          <a href="shopping/index.html" class="nav_item">ショッピング</a>
+        </li> -->
+        <li class="nav-item">
+          <a href="contact/index.html" class="nav_cv"  target="_blank">お問い合わせ・ご相談</a>
+        </li>
+      </ul>
+    </nav>
+
+    <nav class="nav_sp">
+      <div class="nav_sp_logo">
+        <a class="nav_logo" href="../index.html"><h1><img src="img/logo.svg"></h1></a>
+      </div>
+      <div class="w1000" class="nav_sp">
+        <p class="menubtn"><img class="sp_btn" src="img/sp_menu.svg" alt="menu"></p>
+        <nav class="nav_icon">
+            <ul>
+                <li><a href="" class="nav_item"><span><img src="img/nav_top.svg" alt="トップページアイコン"></span>トップページ</a></li>
+                <li><a href="service/index.html" class="nav_item"><span><img src="img/nav_business.svg" alt="事業についてアイコン"></span>事業について</a></li>
+                <li><a href="about/index.html" class="nav_item"><span><img src="img/nav_business.svg" alt="会社についてアイコン"></span>会社について</a></li>
+                <li><a href="cases/index.html" class="nav_item"><span><img src="img/nav_old.svg" alt="過去事例アイコン"></span>過去事例</a></li>
+                <!-- <li><a href="event/index.html" class="nav_item"><span><img src="img/nav_event.svg" alt="イベントアイコン"></span>イベント</a></li> -->
+                <li><a href="shopping/index.html" class="nav_item"><span><img src="img/nav_shopping.svg" alt="ショッピングアイコン"></span>ショッピング</a></li>
+                <li><a href="contact/index.html" class="nav_cv"  target="_blank">お問い合わせ・ご相談</a></li>  
+            </ul>  
+        </nav>
+      <!--/.w1000-->
+      </div>
+    </nav>
+
+    <section class="top-section" id="wrapper">
+
+        <div class="kv kv-top">
+          <div class="kv-image-top">
+          </div>
+          <div class="kv-top_title">
+            <p class="kv-top_logo"><img src="img/top_logo.svg"></p>
+            <h3 class="top_company-name">JSPA｜一般社団法人日本セルフプロデュース協会</h3>
+            <h2 class="top_catch-copy">美しく輝く女性を応援する。</h2>
+            <h2 class="top_catch-copy_sp">美しく輝く女性を<br>応援する。</h2>
+          </div>
+        </div>
+
+        <div class="top_contents">
+          <div class="top_about element">
+            <div class="top_common_title">
+              <p class="top_common_text top_about_title_text_pc">一般社団法人日本セルフプロデュース協会とは</p>
+              <p class="top_common_text_sp top_about_title_text_sp">一般社団法人日本<br>セルフプロデュース協会とは</p>
+              <p class=top_common_subtext>What is the Japan Self-Produce Association?</p>
+            </div>
+            <div class="top_about_details">
+              <p class="about_details_item"><img src="img/01.png"></p>
+              <p class="about_details_text">商品プロデュースからテレビ通販販売・ライブコマース販売まで
+                商品を販売することに関するお悩みを解決するご提案ができます。<br>
+                また、スキンケア美容商品のインストラクター養成・社内研修用として
+                商品販売セミナーの展開をしております。<br>
+                既存の商品の売り上げを、1から100にするお手伝いをします。
+        　　　</p>
+            </div>
+            <section class="top_about_self-produce   js-animation">
+              <p class="top_about_self-produce_text"><span class="top_about_self-produced_emphasis">「セルフプロデュース」</span><br>
+                理想の貴方であり続けるために、私たちが全力でサポートいたします。</p>
+                <p class="top_about_self-produce_text_sp"><span class="top_about_self-produced_emphasis">「セルフプロデュース」</span><br>
+                  理想の貴方であり続けるために<br>私たちが全力でサポートいたします。</p>
+              <p class="top_about_self-produce_img"><img src="img/self-produce.svg" alt="セルフプロデュース図"></p>
+            </section>
+          </div>
+
+
+          <div class="top_service element js-animation">
+            <div class="top_common_title">
+              <p class="top_common_text top_service_text">サービス</p>
+              <p class="top_common_subtext">Service</p>
+            </div>
+            <div class="top_service_contents_wrap">
+              <ul class="top_service_contents">
+                <li class="top_service_contents_item   js-animation">
+                  <a href="service/index.html">
+                  <p class="top_service_contents_item_img top_service_contents_item_img01"></p>
+                  <div class="top_service_contents_item_text_wrap">
+                    <h5>テレビ通販事業</h5>
+                    <p class="top_service_contents_item_text">
+                    地上波テレビ・地方テレビ・BSテレビから、お客様が興味がある通販番組にオファーをさせていただきます。
+                    テレビ会社への商品のプレゼンテーション方法や番組制作までサポートいたします。
+                    1日の売り上げ1〜3億円を目指すことができます。
+                    </p>
+                  </div>
+                  </a>
+                </li>
+                <li class="top_service_contents_item   js-animation">
+                  <a href="service/index.html">
+                  <p class="top_service_contents_item_img top_service_contents_item_img02"></p>
+                  <div class="top_service_contents_item_text_wrap">
+                    <h5>商品プロデュース事業</h5>
+                    <p class="top_service_contents_item_text">
+                      ブランドの立ち上げから商品企画、原材料メーカーや容器メーカーの紹介、
+                       消費者モニタリング、ＬＰ製作、ローンチイベント、ＳＮＳ発信インフルエンサーキャスティング等、
+                        総合的にプロデュースいたします。
+                    </p>
+                  </div>
+                  </a>
+                </li>
+                <li class="top_service_contents_item   js-animation">
+                  <a href="service/index.html">
+                  <p class="top_service_contents_item_img top_service_contents_item_img03"></p>
+                  <div class="top_service_contents_item_text_wrap">
+                    <h5>ライブコマーズ事業</h5>
+                    <p class="top_service_contents_item_text">
+                    地上波テレビ・地方テレビ・BSテレビから、お客様が興味がある通販番組にオファーをさせていただきます。
+                    テレビ会社への商品のプレゼンテーション方法や番組制作までサポートいたします。
+                    1日の売り上げ1〜3億円を目指すことができます。
+                    </p>
+                  </div>
+                  </a>
+                </li>
+                <li class="top_service_contents_item   js-animation">
+                  <a href="service/index.html">
+                  <p class="top_service_contents_item_img top_service_contents_item_img04"></p>
+                  <div class="top_service_contents_item_text_wrap">
+                    <h5>プレゼンター育成事業</h5>
+                    <p class="top_service_contents_item_text">
+                    地上波テレビ・地方テレビ・BSテレビから、お客様が興味がある通販番組にオファーをさせていただきます。
+                    テレビ会社への商品のプレゼンテーション方法や番組制作までサポートいたします。
+                    1日の売り上げ1〜3億円を目指すことができます。
+                    </p>
+                  </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="top_goal element js-animation">
+            <div class="top_common_title">
+              <p class="top_common_text top_goal_text">サービスのゴール</p>
+              <p class="top_common_subtext">goal</p>
+            </div>
+            <p class="top_lead">「セルフプロデュース」を促進することで、<br>貴社の売り上げに貢献致します。</p>
+            <div class="top_goal_details">
+              <div class="top_goal_detail_item">
+                <p class="top_goal_detail_item_text top_goal_detail_item_type  js-animation">法人のお客様</p>
+                <p class="top_goal_detail_item_text top_goal_detail_item_worries  js-animation">よくあるお悩み</p>
+                <ul class="top_goal_detail_item_worriesbox">
+                  <li class="top_goal_detail_item_worriesbox_text worriesbox_company  js-animation">自社商品のブランディング方法が分からない... </li>
+                  <li class="top_goal_detail_item_worriesbox_text worriesbox_company  js-animation">商品の売れ行きが良くない...</li>
+                  <li class="top_goal_detail_item_worriesbox_text worriesbox_company  js-animation">良い商品のはずなのに、認知度が上がらない...</li>
+                  <li class="top_goal_detail_item_worriesbox_text worriesbox_company  js-animation">商品の販売・開発の側面で社員のやる気が上がらない...</li>
+                </ul>
+                <p class="top_goal_detail_item_arrow  js-animation"><img src="img/top_arrow.svg"></p>
+                <p class="top_goal_detail_item_text top_goal_detail_item_solution-text js-animation">法人のお客様のゴールを実現します。</p>
+                <ul class="top_goal_detail_item_solution-answerbox answerbox_company_wrap  js-animation">
+                  <li class="top_goal_detail_item_solution-answerbox_text answerbox_company js-animation">貴社商品のブラッシュアップをサポートします。</li>
+                  <li class="top_goal_detail_item_solution-answerbox_text answerbox_company js-animation">ライブコマーズで売り上げアップを実現します。</li>
+                  <li class="top_goal_detail_item_solution-answerbox_text answerbox_company js-animation">テレビ通販で認知度を上げるお手伝いをします。</li>
+                  <li class="top_goal_detail_item_solution-answerbox_text answerbox_company js-animation">貴社社員様に向けて、貴社商品の販売方法のコーチングを行います。</li>
+                </ul>
+              </div>
+              <div class="top_goal_detail_item  js-animation">
+                <p class="top_goal_detail_item_text top_goal_detail_item_type top_goal_detail_item_type_alone alone  js-animation">個人のお客様</p>
+                <p class="top_goal_detail_item_text top_goal_detail_item_worries  js-animation">よくあるお悩み</p>
+                <ul class="top_goal_detail_item_worriesbox worriesbox_alone_wrap ">
+                  <li class="top_goal_detail_item_worriesbox_text  worriesbox_alone  js-animation">自社商品のブランディング方法が分からない... </li>
+                  <li class="top_goal_detail_item_worriesbox_text  worriesbox_alone  js-animation">商品の売れ行きが良くない...</li>
+                  <li class="top_goal_detail_item_worriesbox_text  worriesbox_alone  js-animation">良い商品のはずなのに、認知度が上がらない...</li>
+                  <li class="top_goal_detail_item_worriesbox_text  worriesbox_alone  js-animation">商品の販売・開発の側面で社員のやる気が上がらない...</li>
+                </ul>
+                <p class="top_goal_detail_item_arrow  js-animation"><img src="img/top_arrow_alone.svg"></p>
+                <p class="top_goal_detail_item_text top_goal_detail_item_solution-text  js-animation">個人のお客様のゴールを実現します。</p>
+                <ul class="top_goal_detail_item_solution-answerbox">
+                  <li class="top_goal_detail_item_solution-answerbox_text answerbox_alone js-animation">貴社商品のブラッシュアップをサポートします。</li>
+                  <li class="top_goal_detail_item_solution-answerbox_text answerbox_alone js-animation">ライブコマーズで売り上げアップを実現します。</li>
+                  <li class="top_goal_detail_item_solution-answerbox_text answerbox_alone js-animation">テレビ通販で認知度を上げるお手伝いをします。</li>
+                  <li class="top_goal_detail_item_solution-answerbox_text answerbox_alone js-animation">貴社社員様に向けて、貴社商品の販売方法のコーチングを行います。</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="top_case element js-animation">
+            <div class="top_common_title">
+              <p class="top_common_text top_case_text">サービス事例</p>
+              <p class="top_common_subtext">Case</p>
+            </div>
+            <div class="top_case_details">
+              <ul class="case_details_wrap">
+                <li class="case_details_block">
+                  <div class="case_block_item"><img src="img/caseicon_cosme.svg"><p>化粧品メーカー様</p></div>
+                  <p class="case_block_text">テレビ通販に関しての情報を丁寧に提供して頂き、 未経験の分野でしたが簡単に取り組むことが出来ました。
+                    生放送のTV番組の準備から一緒に取り組んで頂きとてもありがたかったです。
+                    社員研修も開催していただき、社員のモチベーションがアップしました。
+                    念願の生放送のテレビ通販でデビューでき、更に予想以上の反響で全商品完売し、 来月、再来月の発注も貰えて、工場の生産ラインもフル活動です。 
+                  </p>
+                </li>
+                <li class="case_details_block">
+                  <div class="case_block_item"><img src="img/caseicon_drag.svg"><p>サプリメント開発の会社様</p></div>
+                  <p class="case_block_text">
+                    新規卸会社の開拓に悩んでいるときに、ＯＥＭの新規取引先を紹介してもらい、
+                    テレビ通販で販売することが出来ました。 自社の営業だけでは限界があったので、
+                    商品プロデュースからお願いして本当に良かったです。
+                  </p>
+                </li>
+                <li class="case_details_block">
+                  <div class="case_block_item"><img src="img/caseicon_mask.svg"><p>老舗流通会社様</p></div>
+                  <p class="case_block_text">中国マーケットを拡大するために、
+                    自社化粧品を作る際に完全プロデュースを依頼しました。 
+                    唯一無二の商品開発を提案してもらい、
+                    オリジナル容器の政策では、 サンプルを海外から数十個用意してもらい、他社にはない商品作りが出来ました。 
+                    その上、成分にも徹底的にこだわり何回も企画会議を重ね、モニタリングも何度も繰り返し、 
+                    パッケージデザインも一緒に考えてくれました。
+                  </p>
+                </li>
+              </ul>
+              <a class="cv_wrap cv_wrap_top" href="cases/index.html">
+              　<p class="cv button" class="button" href="#">過去実績はこちら</p></a>
+              </a>
+            </div>  
+          </div> 
+
+          <div class="top_mind element js-animation">
+            <div class="top_common_title">
+              <p class="top_common_text top_mind_text">会社について</p>
+              <p class="top_common_subtext">about</p>
+            </div>
+            <div class="top_mind_details top_about_details">
+              <p class="mind_details_item about_details_item img"><img src="img/06.png"></p>
+              <div class="common_details_box">
+                <p class="common_details_text about_details_text">
+                  美容と健康をメディアに関わる多くの女性へ向けて、
+                  「キャリアを活かし、個人が自分自身で綺麗になって社会進出できるように」との想いから、
+                  一般社団法人日本セルフプロデュース協会を設立。<br>
+                  「女性の美」と「大人の魅了を一生のタカラに」
+                  このテーマの素晴らしさ・大切さを、日本全国そして世界の女性へと伝えています。
+                </p>
+                <a class="cv_wrap cv_wrap_top" href="about/index.html">
+                  　<p class="cv button" href="#">詳細を見る</p>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="top_representative element js-animation">
+            <div class="top_common_title">
+              <p class="top_common_text top_representative_text">代表あいさつ</p>
+              <p class="top_common_subtext">Representative</p>
+            </div>
+            <div class="top_representative_details top_about_details">
+              <p class="representative_details_item img about_details_item"><img src="img/05.png"></p>
+              <p class="representative_details_item img about_details_item_sp"><img src="img/05_sp.png"></p>
+              <div class="common_details_box">
+                <p class="representative_details_name about_details_text about_details_text_name">香取 祐子</p>
+                <p class="common_details_text about_details_text">リンパドレナージュ、タクティールケアを取り入れたエステサロンを経営。<br>
+                さらに毎月テレビ通販ショーゲストとして多数の生放送に出演し、1日で1億円売り上げた実績をもつ。
+                今も多くのカテゴリーの売り上げを更新している中で、蓄積されたノウハウを用いそのテクニックをシェアするセミナーを開催中。
+                また企業の通販アドバイザーとして、商品開発 / 企画・番組制作 / ゲスト・モデル育成事業 を行っています。
+                </p>
+                <a class="cv_wrap cv_wrap_top" href="about/index.html">
+                  　<p class="cv button" href="#">詳細を見る</p>
+                </a>
+              </div>
+            </div>
+            <footer class="footer_wrap">
+              <div class="footer_policy_wrap">
+                <ul class="footer_policy">
+                  <li class="footer_policy_item"><a href="company/index.html">会社概要</a></li>
+                  <li class="footer_policy_item"><a href="sitepolicy/index.html">サイトポリシー</a></li>
+                  <li class="footer_policy_item"><a href="privacy/index.html">プライバシーポリシー</a></li>
+                </ul>
+              </div>
+              <div class="footer_about">
+                <ul class="footer-icon">
+                  <li><img src="img/logo_instagram.png" alt="Instagramアイコン"></li>
+                  <li><img src="img/logo_twitter.png" alt="Twitterアイコン"></li>
+                  <li><img src="img/logo_facebook.png" alt="Facebookアイコン"></li>
+                </ul>
+                <p class="footer-text"> JSPA｜一般社団法人日本セルフプロデュース協会<br>
+                  7-2 denenchofu, otaku-ku, Tokyo<br>
+                  Learn More
+                </p>
+                <p class="footer-copyright">Copyright © 2021 xxxxxxxx</p>
+              </div>
+            </footer>
+          </div>
+        </div> 
+      </section>
+
+  </body>
+</html>

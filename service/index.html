@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>about</title>
+    <!-- jQuery.jsの読み込み -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+    <script>
+      //jQuery
+      $(function(){
+        // <!-- スムーズスクロール部分の記述 -->
+        $(".nav_icon").hide();
+        $(".menubtn").click(function(){//メニューボタンをクリックしたとき
+          $(".nav_icon").toggle(300);//0.3秒で表示したり非表示にしたりする
+        });
+        // <!-- スムーズスクロール部分の記述 -->
+
+        $("a.btn_act").click(function(){
+          var connectCont = $("a.btn_act").index(this);
+          var showCont = connectCont+1;
+          $('.motion').css({display:'none'});
+          $('#motion_area'+(showCont)).fadeIn('slow');
+
+          $('a.btn_act').removeClass('active');
+          $(this).addClass('active');
+        });
+
+        // <!-- ページをふわっと出す記述 -->
+        // フェードインで表示するコンテンツをdisplay:noneで非表示にする
+         $('head').append('<style type="text/css">#wrapper{display:none;}</style>');
+        $(function() {
+          // フェードインidを指定と表示速度ミリ秒
+          $('#wrapper').fadeIn(600);
+          // ページ遷移時にフェードアウトさせるclickイベントの要素を指定。ここではli a
+          $('li a, a.windowFade').click(function() {
+            var url = $(this).attr("href");
+            // アニメーションで透過0になるまでフェードアウトさせる。速度ミリ秒
+            $('#wrapper').animate({"opacity": 0}, 300, function() {
+              location.href = url;
+            });
+            return false;
+          });
+        });
+        // <!-- ページをふわっと出す記述 -->
+
+
+
+        $('.sp_btn').click(function(){
+          if($(this).hasClass('open') == false){
+            $(this).attr('src', '../img/sp_menu_close.svg').addClass('open');
+          }else{
+            $(this).attr('src', '../img/sp_menu.svg').removeClass('open');
+          }
+        });
+        
+      });
+      //jQuery
+
+    </script>
+
+
+  </head>
+    <body>
+    <nav class="nav_pc effect-fade" >
+      <div class="nav_sp_logo">
+        <a class="nav_logo" href="../index.html"><h1><img src="../img/logo.svg"></h1></a>
+      </div>
+      <ul class="groval-nav">
+        <li class="nav-item">
+          <a href="../index.html" class="nav_item">トップページ</a>
+        </li>
+        <li class="nav-item">
+          <a href="../service/index.html" class="nav_item">事業について</a>
+        </li>
+        <li class="nav-item">
+          <a href="../about/index.html" class="nav_item">会社について</a>
+        </li>
+        <li class="nav-item" >
+          <a href="../cases/index.html" class="nav_item">過去事例</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a href="../event/index.html" class="nav_item">イベント</a>
+        </li> -->
+        <!-- <li class="nav-item">
+          <a href="../shopping/index.html" class="nav_item">ショッピング</a>
+        </li> -->
+        <li class="nav-item">
+          <a href="../contact/index.html" class="nav_cv"  target="_blank">お問い合わせ・ご相談</a>
+        </li>
+      </ul>
+    </nav>
+
+    <nav class="nav_sp">
+      <div class="nav_sp_logo">
+        <a class="nav_logo" href="../index.html"><h1><img src="../img/logo.svg"></h1></a>
+      </div>
+      <div class="w1000" class="nav_sp">
+        <p class="menubtn"><img class="sp_btn" src="../img/sp_menu.svg" alt="menu"></p>
+        <nav class="nav_icon">
+            <ul>
+                <li><a href="../index.html" class="nav_item"><span><img src="../img/nav_top.svg" alt="トップページアイコン"></span>トップページ</a></li>
+                <li><a href="" class="nav_item"><span><img src="../img/nav_business.svg" alt="事業についてアイコン"></span>事業について</a></li>
+                <li><a href="../about/index.html" class="nav_item"><span><img src="../img/nav_business.svg" alt="会社についてアイコン"></span>会社について</a></li>
+                <li><a href="../cases/index.html" class="nav_item"><span><img src="../img/nav_old.svg" alt="過去事例アイコン"></span>過去事例</a></li>
+                <!-- <li><a href="../event/index.html" class="nav_item"><span><img src="../img/nav_event.svg" alt="イベントアイコン"></span>イベント</a></li> -->
+                <!-- <li><a href="../shopping/index.html" class="nav_item"><span><img src="../img/nav_shopping.svg" alt="ショッピングアイコン"></span>ショッピング</a></li> -->
+                <li><a href="../contact/index.html" class="nav_cv"  target="_blank">お問い合わせ・ご相談</a></li>  
+            </ul>  
+        </nav>
+      <!--/.w1000-->
+      </div>
+    </nav>
+
+    
+    <section class="top-section" id="wrapper">
+      <div class="kv">
+        <div class="kv-image">
+        </div>
+        <div class="title">
+          <h2>SERVICE</h2>
+          <h3>事業について</h3>
+        </div>
+      </div>
+      <div class="service_contents_wrap effect-fade">
+
+      <div class="service_contents_nav_wrap" id="menu">
+        <ul class="service_contents_nav">
+          <a a href="javascript:void(0);" class="click-btn btn_act active"><li class="service_contents_nav_item">テレビ通販事業<br><span class="service_contents_nav_item_english">Mail order</span></li></a>
+          <a a href="javascript:void(0);" class="click-btn btn_act"><li class="service_contents_nav_item">商品プロデュース事業<br><span class="service_contents_nav_item_english">Product production</span></li></a>
+          <a a href="javascript:void(0);" class="click-btn btn_act"> <li class="service_contents_nav_item">ライブコマーズ事業<br><span class="service_contents_nav_item_english">Live commerce</span></li></a>
+          <a a href="javascript:void(0);" class="click-btn btn_act"> <li class="service_contents_nav_item">プレゼンター育成事業<br><span class="service_contents_nav_item_english">Presenter training</span></li></a>
+        </ul>
+      </div>
+
+      <div class="service_contents">
+        
+      <!-- テレビ通販事業 -->
+
+      <section class="service_contents_item motion"  id="motion_area1">
+          <h3>テレビ通販事業</h3>
+          <section>
+            <!-- <h4>テレビ通販事業とは？</h4> -->
+            <div class="service_contents_item_item_box">
+              <p class="service_photo service_photo01"></p>
+              <p class="service_contents_item_item_box_text">
+                <span class="title">テレビ通販事業</span><br>
+                地上波テレビ・地方テレビ・BSテレビから、お客様が興味がある通販番組にオファーをさせていただきます。
+                テレビ会社への商品のプレゼンテーション方法や番組制作までサポートいたします。1日の売り上げ1〜3億円を生み出すことができます。</p>
+            </div>
+            <a  class="cv_wrap" href="../cases/index.html"><p class="cv button" class="button" href="#">過去実績はこちら</p></a>
+      
+          </section>
+          <h4 class="comment_title">お客様の声</h4>
+          <div class="cases_contents_item_item_box commect_wrap">
+            <p class="cases_contents_item_item_box_comment_img"><img src="../img/comment.svg"></p>
+            <div class="cases_contents_item_item_box_comment_text">
+              <p class="bold">化粧品会社様</p>
+              <p class="normal">
+                テレビ通販に関しての情報を丁寧に提供して頂き、 未経験の分野でしたが簡単に取り組むことが出来ました。
+                生放送のTV番組の準備から一緒に取り組んで頂きとてもありがたかったです。社員研修も開催していただき、社員のモチベーションがアップしました。
+              </p>
+            </div>
+          </div>
+          <div class="cases_contents_item_item_box commect_wrap">
+            <p class="cases_contents_item_item_box_comment_img"><img src="../img/comment.svg"></p>
+            <div class="cases_contents_item_item_box_comment_text">
+              <p class="bold">サプリメント開発の会社様</p>
+              <p class="normal">
+                新規卸会社の開拓に悩んでいるときに、ＯＥＭの新規取引先を紹介してもらい、テレビ通販で販売することが出来ました。 自社の営業だけでは限界があったので、商品プロデュースからお願いして本当に良かったです。
+              </p>
+            </div>
+          </div>
+
+          <h4 class="comment_title">ご利用の流れ</h4>
+          <div class="service_busness_usage-flow service_busness_usage-flow_right">
+              <p class="service_business_img service_tv_img01"></p>
+              <div class="service_business_text_wrap">
+                  <h5>直接お会いするまたはテレビ通話を利用し、ヒアリングいたします。</h5>
+                  <p class="service_business_text">テレビショッピングへの参入が初心者のお客様から、番組立ち上げ経験のあるお客様まで、商品の売り上げの現状やブランディング状況などをヒアリングさせていただきます。</p>
+              </div>
+          </div>
+          <div class="service_busness_usage-flow  service_busness_usage-flow_left">
+            <div class="service_business_text_wrap">
+              <h5>テレビ会社へのプレゼンに向けて、<br>社員様のプレゼン育成を行います。</h5>
+              <p class="service_business_text">番組を制作する前に、テレビ局にどんな商品を紹介したいかのアピールプレゼンを行います。そのためのプレゼンレッスンを約10回ほど開催いたします。</p>
+            </div>
+            <p class="service_business_img service_tv_img02"></p>
+          </div>
+          <div class="service_busness_usage-flow service_busness_usage-flow_right">
+            <p class="service_business_img service_tv_img03"></p>
+            <div class="service_business_text_wrap">
+              <h5>番組の時間帯が確保できた後<br>番組制作を行います。</h5>
+              <p class="service_business_text">番組を制作するための、番組シナリオを一緒に考えていきます。</p>
+            </div>
+          </div>
+          <div class="service_busness_usage-flow service_busness_usage-flow_left">
+            <div class="service_business_text_wrap">
+              <h5>貴社の社員様に、テレビ通販ショッピングに出演いただきます。</h5>
+              <p class="service_business_text">レッスンを受けた社員様に、テレビの中で商品をプレゼンしていただきます。番組のシナリオ通りに進められるように裏側でサポートをさせていただきます。</p>
+            </div>
+            <p class="service_business_img service_tv_img04"></p>
+          </div>
+          <div class="service_busness_usage-flow service_busness_usage-flow_right">
+            <p class="service_business_img service_tv_img05"></p>
+            <div class="service_business_text_wrap">
+              <h5>テレビ通販ショッピングの運営で<br>定期的なメンテナンスを行います。</h5>
+              <p class="service_business_text">テレビショッピングを定期的に続けていきたい方に向けて継続的なサポートを行います。</p>
+            </div>
+          </div>
+
+          <a  class="cv_wrap" href="../cases/index.html"><p class="cv button" class="button" href="#">過去実績はこちら</p></a>
+       
+        </section>
+
+        <!-- テレビ通販事業 -->
+        
+        <!-- 商品プロデュース事業 -->
+
+        <section class="service_contents_item motion"  id="motion_area2">
+          <h3>商品プロデュース事業</h3>
+          <section>
+            <div class="service_contents_item_item_box">
+              <p class="service_photo service_photo02"></p>
+              <p class="service_contents_item_item_box_text">
+                <span class="title">商品プロデュース事業</span><br>
+                ブランドの立ち上げから商品企画、原材料メーカーや容器メーカーの紹介、 
+                消費者モニタリング、ＬＰ製作、ローンチイベント、ＳＮＳ発信インフルエンサーキャスティング等、 
+                総合的にプロデュースいたします。</p>
+            </div>
+          </section>
+          <h4 class="comment_title">お客様の声</h4>
+          <div class="cases_contents_item_item_box commect_wrap">
+            <p class="cases_contents_item_item_box_comment_img"><img src="../img/comment.svg"></p>
+            <div class="cases_contents_item_item_box_comment_text">
+              <p class="bold">サプリメントメーカー様</p>
+              <p class="normal">
+                新たな市場開拓の為にスウィーツの企画を提案してもらい、 市場調査からニーズを見極める情報を提供してもらいました。
+                何度も会議に参加もしてもらい、原材料の成分配合から食品メーカーの工場ラインも抑えてくれて、 
+                希望通りクリスマス商戦に間に合い予算以上の売り上げとなり、その年1番のビッグヒットとなりました。
+              </p>
+            </div>
+          </div>
+          <div class="cases_contents_item_item_box commect_wrap">
+            <p class="cases_contents_item_item_box_comment_img"><img src="../img/comment.svg"></p>
+            <div class="cases_contents_item_item_box_comment_text">
+              <p class="bold">不動産会社様</p>
+              <p class="normal">
+                初めての化粧商品事業部の立ち上げで、 なにから取り組むのかもわからず悩んでいましたが、 
+                ブランドの立ち上げから商品企画、原材料メーカーの紹介、 消費者モニタリング、
+                ＳＮＳ発信インフルエンサーキャスティング等、 総合的にプロデュースしてもらい大変助かりました。
+              </p>
+            </div>
+          </div>
+
+          <h4 class="comment_title">ご利用の流れ</h4>
+          <div class="service_busness_usage-flow service_busness_usage-flow_right">
+              <p class="service_business_img service_tv_img01"></p>
+              <div class="service_business_text_wrap">
+                  <h5>直接お会いするまたはテレビ通話を利用し、ヒアリングいたします。</h5>
+                  <p class="service_business_text">テレビショッピングへの参入が初心者のお客様から、番組立ち上げ経験のあるお客様まで、商品の売り上げの現状やブランディング状況などをヒアリングさせていただきます。</p>
+              </div>
+          </div>
+          <div class="service_busness_usage-flow  service_busness_usage-flow_left">
+            <div class="service_business_text_wrap">
+              <h5>テレビ会社へのプレゼンに向けて、<br>社員様のプレゼン育成を行います。</h5>
+              <p class="service_business_text">番組を制作する前に、テレビ局にどんな商品を紹介したいかのアピールプレゼンを行います。そのためのプレゼンレッスンを約10回ほど開催いたします。</p>
+            </div>
+            <p class="service_business_img service_tv_img02"></p>
+          </div>
+          <div class="service_busness_usage-flow service_busness_usage-flow_right">
+            <p class="service_business_img service_tv_img03"></p>
+            <div class="service_business_text_wrap">
+              <h5>番組の時間帯が確保できた後<br>番組制作を行います。</h5>
+              <p class="service_business_text">番組を制作するための、番組シナリオを一緒に考えていきます。</p>
+            </div>
+          </div>
+          <div class="service_busness_usage-flow service_busness_usage-flow_left">
+            <div class="service_business_text_wrap">
+              <h5>貴社の社員様に、テレビ通販ショッピングに出演いただきます。</h5>
+              <p class="service_business_text">レッスンを受けた社員様に、テレビの中で商品をプレゼンしていただきます。番組のシナリオ通りに進められるように裏側でサポートをさせていただきます。</p>
+            </div>
+            <p class="service_business_img service_tv_img04"></p>
+          </div>
+          <div class="service_busness_usage-flow service_busness_usage-flow_right">
+            <p class="service_business_img service_tv_img05"></p>
+            <div class="service_business_text_wrap">
+              <h5>テレビ通販ショッピングの運営で<br>定期的なメンテナンスを行います。</h5>
+              <p class="service_business_text">テレビショッピングを定期的に続けていきたい方に向けて継続的なサポートを行います。</p>
+            </div>
+          </div>
+
+          <a  class="cv_wrap" href="../cases/index.html"><p class="cv button" class="button" href="#">過去実績はこちら</p></a>
+        </section>
+
+        <!-- 商品プロデュース事業 -->
+
+
+
+        <section class="service_contents_item motion"  id="motion_area3">
+          <h3>ライブコマーズ事業</h3>
+          <section>
+            <div class="service_contents_item_item_box">
+            <p class="service_photo service_photo03"></p>
+            <p class="service_contents_item_item_box_text">
+              <span class="title">ライブコマーズ事業</span><br>
+              テキストキステキストテキストテキストテキストテキストテキスト
+              テキストテキストテキストテキストテキストテキストキステキスト
+              ストキステキストキステキストテキストテキストテキストテストス
+              キストテキストテキスト</p>
+          </div>
+          </section>
+        
+          <a  class="cv_wrap" href="../cases/index.html"><p class="cv button" class="button" href="#">過去実績はこちら</p></a>
+          <h4 class="comment_title">ご利用の流れ</h4>
+          <div class="service_busness_usage-flow service_busness_usage-flow_right">
+              <p class="service_business_img service_tv_img01"></p>
+              <div class="service_business_text_wrap">
+                  <h5>直接お会いするまたはテレビ通話を利用し、ヒアリングいたします。</h5>
+                  <p class="service_business_text">テレビショッピングへの参入が初心者のお客様から、番組立ち上げ経験のあるお客様まで、商品の売り上げの現状やブランディング状況などをヒアリングさせていただきます。</p>
+              </div>
+          </div>
+          <div class="service_busness_usage-flow  service_busness_usage-flow_left">
+            <div class="service_business_text_wrap">
+              <h5>テレビ会社へのプレゼンに向けて、<br>社員様のプレゼン育成を行います。</h5>
+              <p class="service_business_text">番組を制作する前に、テレビ局にどんな商品を紹介したいかのアピールプレゼンを行います。そのためのプレゼンレッスンを約10回ほど開催いたします。</p>
+            </div>
+            <p class="service_business_img service_tv_img02"></p>
+          </div>
+          <div class="service_busness_usage-flow service_busness_usage-flow_right">
+            <p class="service_business_img service_tv_img03"></p>
+            <div class="service_business_text_wrap">
+              <h5>番組の時間帯が確保できた後<br>番組制作を行います。</h5>
+              <p class="service_business_text">番組を制作するための、番組シナリオを一緒に考えていきます。</p>
+            </div>
+          </div>
+          <div class="service_busness_usage-flow service_busness_usage-flow_left">
+            <div class="service_business_text_wrap">
+              <h5>貴社の社員様に、テレビ通販ショッピングに出演いただきます。</h5>
+              <p class="service_business_text">レッスンを受けた社員様に、テレビの中で商品をプレゼンしていただきます。番組のシナリオ通りに進められるように裏側でサポートをさせていただきます。</p>
+            </div>
+            <p class="service_business_img service_tv_img04"></p>
+          </div>
+          <div class="service_busness_usage-flow service_busness_usage-flow_right">
+            <p class="service_business_img service_tv_img05"></p>
+            <div class="service_business_text_wrap">
+              <h5>テレビ通販ショッピングの運営で<br>定期的なメンテナンスを行います。</h5>
+              <p class="service_business_text">テレビショッピングを定期的に続けていきたい方に向けて継続的なサポートを行います。</p>
+            </div>
+          </div>
+        </section>
+
+      <section class="service_contents_item motion "  id="motion_area4">
+        <h3>プレゼンター育成事業</h3>
+        <section>
+          <div class="service_contents_item_item_box">
+          <p class="service_photo service_photo04"></p>
+          <p class="service_contents_item_item_box_text">
+            <span class="title">プレゼンター育成事業</span><br>
+            テキストキステキストテキストテキストテキストテキストテキスト
+            テキストテキストテキストテキストテキストテキストキステキスト
+            ストキステキストキステキストテキストテキストテキストテストス
+            キストテキストテキスト</p>
+        </div>
+        </section>
+      
+        <a  class="cv_wrap" href="../cases/index.html"><p class="cv button" class="button" href="#">過去実績はこちら</p></a>
+       
+        <h4 class="comment_title">ご利用の流れ</h4>
+        <div class="service_busness_usage-flow service_busness_usage-flow_right">
+            <p class="service_business_img service_tv_img01"></p>
+            <div class="service_business_text_wrap">
+                <h5>直接お会いするまたはテレビ通話を利用し、ヒアリングいたします。</h5>
+                <p class="service_business_text">テレビショッピングへの参入が初心者のお客様から、番組立ち上げ経験のあるお客様まで、商品の売り上げの現状やブランディング状況などをヒアリングさせていただきます。</p>
+            </div>
+        </div>
+        <div class="service_busness_usage-flow  service_busness_usage-flow_left">
+          <div class="service_business_text_wrap">
+            <h5>テレビ会社へのプレゼンに向けて、<br>社員様のプレゼン育成を行います。</h5>
+            <p class="service_business_text">番組を制作する前に、テレビ局にどんな商品を紹介したいかのアピールプレゼンを行います。そのためのプレゼンレッスンを約10回ほど開催いたします。</p>
+          </div>
+          <p class="service_business_img service_tv_img02"></p>
+        </div>
+        <div class="service_busness_usage-flow service_busness_usage-flow_right">
+          <p class="service_business_img service_tv_img03"></p>
+          <div class="service_business_text_wrap">
+            <h5>番組の時間帯が確保できた後<br>番組制作を行います。</h5>
+            <p class="service_business_text">番組を制作するための、番組シナリオを一緒に考えていきます。</p>
+          </div>
+        </div>
+        <div class="service_busness_usage-flow service_busness_usage-flow_left">
+          <div class="service_business_text_wrap">
+            <h5>貴社の社員様に、テレビ通販ショッピングに出演いただきます。</h5>
+            <p class="service_business_text">レッスンを受けた社員様に、テレビの中で商品をプレゼンしていただきます。番組のシナリオ通りに進められるように裏側でサポートをさせていただきます。</p>
+          </div>
+          <p class="service_business_img service_tv_img04"></p>
+        </div>
+        <div class="service_busness_usage-flow service_busness_usage-flow_right">
+          <p class="service_business_img service_tv_img05"></p>
+          <div class="service_business_text_wrap">
+            <h5>テレビ通販ショッピングの運営で<br>定期的なメンテナンスを行います。</h5>
+            <p class="service_business_text">テレビショッピングを定期的に続けていきたい方に向けて継続的なサポートを行います。</p>
+          </div>
+        </div>
+      </section>
+    </section>
+
+
+    </section>
+  </div>
+  <footer class="footer_wrap">
+    <div class="footer_policy_wrap">
+      <ul class="footer_policy">
+        <li class="footer_policy_item"><a href="../company/index.html">会社概要</a></li>
+        <li class="footer_policy_item"><a href="../sitepolicy/index.html">サイトポリシー</a></li>
+        <li class="footer_policy_item"><a href="../privacy/index.html">プライバシーポリシー</a></li>
+      </ul>
+    </div>
+    <div class="footer_about">
+      <ul class="footer-icon">
+        <li><img src="../img/logo_instagram.png" alt="Instagramアイコン"></li>
+        <li><img src="../img/logo_twitter.png" alt="Twitterアイコン"></li>
+        <li><img src="../img/logo_facebook.png" alt="Facebookアイコン"></li>
+      </ul>
+      <p class="footer-text"> JSPA｜一般社団法人日本セルフプロデュース協会<br>
+        7-2 denenchofu, otaku-ku, Tokyo<br>
+        Learn More
+      </p>
+      <p class="footer-copyright">Copyright © 2021 xxxxxxxx</p>
+    </div>
+  </footer>
+
+</body>
+</html>

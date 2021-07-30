@@ -1,1 +1,1 @@
-# yuko-katori-open
+# yuko-katori

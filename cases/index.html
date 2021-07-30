@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>about</title>
+    <!-- jQuery.jsの読み込み -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script>
+      // <!-- スムーズスクロール部分の記述 -->
+      $(function(){
+        //jQuery
+        $(".nav_icon").hide();
+        $(".menubtn").click(function(){//メニューボタンをクリックしたとき
+            $(".nav_icon").toggle(300);//0.3秒で表示したり非表示にしたりする
+        });
+          
+          $("a.btn_act").click(function(){
+            var connectCont = $("a.btn_act").index(this);
+            var showCont = connectCont+1;
+            $('.motion').css({display:'none'});
+            $('#motion_area'+(showCont)).fadeIn('slow');
+            $('a.btn_act').removeClass('active');
+            $(this).addClass('active');
+          });
+      });
+
+      //jQuery
+
+    </script>
+  </head>
+    <body>
+    <nav class="nav_pc">
+      <div class="nav_sp_logo">
+        <a class="nav_logo" href="../index.html"><h1><img src="../img/logo.svg"></h1></a>
+      </div>
+      <ul class="groval-nav menu globalnav">
+        <li class="nav-item">
+          <a href="../index.html" class="nav_item">トップページ</a>
+        </li>
+        <li class="nav-item">
+          <a href="../service/index.html" class="nav_item">事業について</a>
+        </li>
+        <li class="nav-item">
+          <a href="../about/index.html" class="nav_item">会社について</a>
+        </li>
+        <li class="nav-item" >
+          <a href="" class="nav_item  dropdown-btn">過去事例</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a href="../event/index.html" class="nav_item">イベント</a>
+        </li> -->
+        <!-- <li class="nav-item">
+          <a href="../shopping/index.html" class="nav_item">ショッピング</a>
+        </li> -->
+        <li class="nav-item">
+          <a href="../contact/index.html" class="nav_cv" target="_blank">お問い合わせ・ご相談</a>
+        </li>
+      </ul>
+    </nav>
+
+    <nav class="nav_sp">
+      <div class="nav_sp_logo">
+        <a class="nav_logo" href="../index.html"><h1><img src="../img/logo.svg"></h1></a>
+      </div>
+      <div class="w1000" class="nav_sp">
+        <p class="menubtn"><img class="sp_btn" src="../img/sp_menu.svg" alt="menu"></p>
+        <nav class="nav_icon">
+            <ul>
+                <li><a href="../index.html" class="nav_item"><span><img src="../img/nav_top.svg" alt="トップページアイコン"></span>トップページ</a></li>
+                <li><a href="" class="nav_item"><span><img src="../img/nav_business.svg" alt="事業についてアイコン"></span>事業について</a></li>
+                <li><a href="../about/index.html" class="nav_item"><span><img src="../img/nav_business.svg" alt="会社についてアイコン"></span>会社について</a></li>
+                <li><a href="../cases/index.html" class="nav_item"><span><img src="../img/nav_old.svg" alt="過去事例アイコン"></span>過去事例</a></li>
+                <!-- <li><a href="../event/index.html" class="nav_item"><span><img src="../img/nav_event.svg" alt="イベントアイコン"></span>イベント</a></li> -->
+                <!-- <li><a href="../shopping/index.html" class="nav_item"><span><img src="../img/nav_shopping.svg" alt="ショッピングアイコン"></span>ショッピング</a></li> -->
+                <li><a href="../contact/index.html" class="nav_cv" target="_blank">お問い合わせ・ご相談</a></li>  
+            </ul>  
+        </nav>
+      <!--/.w1000-->
+      </div>
+    </nav>
+
+    <section class="top-section" id="wrapper">
+        <div class="kv">
+          <div class="kv-image">
+          </div>
+          <div class="title">
+            <h2>CASES</h2>
+            <h3>過去事例</h3>
+          </div>
+        </div>
+        <div class="cases_contents_wrap effect-fade">
+
+          <div class="cases_contents_nav_wrap" id="menu">
+            <ul class="cases_contents_nav">
+              <a a href="javascript:void(0);" class="click-btn btn_act"><li class="cases_contents_nav_item">テレビ通販事業</li></a>
+              <a a href="javascript:void(0);" class="click-btn btn_act"><li class="cases_contents_nav_item">商品プロデュース事業</li></a>
+              <a a href="javascript:void(0);" class="click-btn btn_act"> <li class="cases_contents_nav_item">ライブコマーズ事業</li></a>
+              <a a href="javascript:void(0);" class="click-btn btn_act"> <li class="cases_contents_nav_item tv_btn">スピーチプレゼンター<br>育成事業</li></a>
+            </ul>
+          </div>
+
+          <div class="cases_contents">
+            
+            <section class="cases_contents_item">
+              
+              <div id="motion_area1" class="motion">
+                <h3>テレビ通販事業</h3>
+                <div class="cases_contents_item_item_box">
+                  <p class="cases_photo cases_cosme"></p>
+                  <p class="cases_contents_item_item_box_text">
+                    <span class="title">化粧品会社様</span><br>
+                    テレビ通販に関しての情報を丁寧に提供して頂き、
+                    未経験の分野でしたが簡単に取り組むことが出来ました。<br>
+                    生放送のTV番組の準備から一緒に取り組んで頂きとてもありがたかったです。<br>
+                    社員研修も開催していただき、社員のモチベーションがアップしました。<br>
+                    念願の生放送のテレビ通販でデビューでき、更に予想以上の反響で全商品完売し、
+                    来月、再来月の発注も貰えて、工場の生産ラインもフル活動です。
+                    このような不況の時代ですので、不安もある中の新たな販売開拓の挑戦でしたが、
+                    不安もなく結果も大満足で感謝しています。</p>
+                </div>
+                <div class="cases_contents_item_item_box">
+                  <p class="cases_photo cases_drag"></p>
+                  <p class="cases_contents_item_item_box_text">
+                    <span class="title">サプリメント開発の会社様</span><br>
+                    新規卸会社の開拓に悩んでいるときに、ＯＥＭの新規取引先を紹介してもらい、テレビ通販で販売することが出来ました。
+                    自社の営業だけでは限界があったので、商品プロデュースからお願いして本当に良かったです。</p>
+                </div>
+              </div>
+
+
+              <div  id="motion_area2" class="motion">
+                <h3>商品プロデュース事業</h3>
+                <div class="cases_contents_item_item_box">
+                  <p class="cases_photo cases_cosme"></p>
+                  <p class="cases_contents_item_item_box_text">
+                    <span class="title">不動産会社様</span><br>
+                    初めての化粧商品事業部の立ち上げで、
+                    なにから取り組むのかもわからず悩んでいましたが、
+                    ブランドの立ち上げから商品企画、原材料メーカーや容器メーカーの紹介、
+                    消費者モニタリング、ＬＰ製作、ローンチイベント、ＳＮＳ発信インフルエンサーキャスティング等、
+                    総合的にプロデュースしてもらい大変助かりました。<br>
+                    企画からローンまで最短で念願の自社ブランドの化粧品を作ることができ、とても満足しています。</p>
+                </div>
+                <div class="cases_contents_item_item_box">
+                  <p class="cases_photo cases_drag"></p>
+                  <p class="cases_contents_item_item_box_text">
+                    <span class="title">サプリメントメーカー様</span><br>
+                    新たな市場開拓の為にスウィーツの企画を提案してもらい、
+                    市場調査からニーズを見極める情報を提供してもらいました。<br>
+                    何度も会議に参加もしてもらい、原材料の成分配合から食品メーカーの工場ラインも抑えてくれて、
+                    希望通りクリスマス商戦に間に合い予算以上の売り上げとなり、その年1番のビッグヒットとなりました。</p>
+                </div>
+                <div class="cases_contents_item_item_box">
+                  <p class="cases_photo cases_mask"></p>
+                  <p class="cases_contents_item_item_box_text">
+                    <span class="title">老舗流通会社様</span><br>
+                    中国マーケットを拡大するために、自社化粧品を作る際に完全プロデュースを依頼しました。
+                    唯一無二の商品開発を提案してもらい、オリジナル容器の政策では、
+                    サンプルを海外から数十個用意してもらい、他社にはない商品作りが出来ました。
+                    その上、成分にも徹底的にこだわり何回も企画会議を重ね、モニタリングも何度も繰り返し、
+                    パッケージデザインも一緒に考えてくれました。また、それを展示会で新商品として発表する際には、
+                    インスタグラマー数人と大々的にインスタライブで発表してもらい、
+                    展示会に来れないお客様にもしっかりと多くの拡散できました。
+                    商品企画からローンチまで、完全プロデュースしてもらい、大変スムーズに製作できました。</p>
+                </div>
+                <div class="cases_contents_item_item_box">
+                  <p class="cases_photo cases_cosme"></p>
+                  <p class="cases_contents_item_item_box_text">
+                    <span class="title">ＢtoB化粧品会社様</span><br>
+                    ＢｔｏＣを始めたいと相談し、ＥＣ、生放送テレビ通販、地上波テレビ通販、
+                    雑誌通販など、各通販全般の提案をしてもらえたので、新規開拓が楽でした。
+                    またＢｔｏＣ向けの新商品開発のコンサルもしてくださり、毎月新商品を販売できることになり、
+                    一気に新たな開拓が実現できました。</p>
+                </div>
+              </div>
+              
+              <div  id="motion_area3" class="motion" >
+                <h3>ライブコマーズ事業</h3>
+                <div class="cases_contents_item_item_box">
+                  <p class="cases_photo  cases_esthetic"></p>
+                  <p class="cases_contents_item_item_box_text">
+                    <span class="title">大手エステ会社様</span><br>
+                    これまでも広告費と内容を見直す際に、
+                    その予算で新たなライブ配信事業とライブコマースを提案、
+                    企画してもらい、これまで誰に相談していいのか？わからない事がすぐに解決できました。
+                    動画製作もサポートしてもらい、番組構成やトーク内容の修正、コンプライアンスや薬事法のチェック、
+                    全て指導してもらいました。なので、自社の情熱が伝えやすい動画製作や、
+                    ライブ配信が簡単にできて本当に助かりました。</p>
+                </div>
+                <div class="cases_contents_item_item_box">
+                  <p class="cases_photo  cases_cosme"></p>
+                  <p class="cases_contents_item_item_box_text">
+                    <span class="title">大手美容商材販売メーカー様</span><br>
+                    新入社員向け研修の「コミュケーションテクニック」や、
+                    社員への「ライブコマース研修」「営業、販売トークコーチング」などを開催依頼し、
+                    その結果、社員が自己啓発でスキルアップし、社内環境も良くなり今季の売り上げが順調です。</p>
+                </div>
+              </div>
+
+              <div  id="motion_area4" class="motion" >
+                <h3>スピーチプレゼンター育成事業</h3>
+                <div class="cases_contents_item_item_box">
+                  <p class="cases_photo cases_teach"></p>
+                  <p class="cases_contents_item_item_box_text">
+                    <span class="title">教員社団法人様</span><br>
+                    所属の講師の方々が、リモートになり指導方法や啓蒙方法がわからず悩んでいたところ、
+                    ＺＯＯＭやインスタライブ、ＦＢライブでの発信方法を提案してもらい、今まで以上に成果が出てます。
+                    その上、各講師の方々にトークの指導を丁寧にしてもらったおかげで、
+                    トークが上達し、伝える力がわかりやすくなったので、新規会員も増えて大変効果を実感してます。</p>
+                </div>
+              </div>
+              <a  class="cv_wrap cases_contents_cv" href="../service/index.html"><p class="cv button" class="button" href="#">事業についてはこちら</p></a>
+            </section>
+          </div>
+      </div>
+    </section>
+
+    <footer class="footer_wrap">
+      <div class="footer_policy_wrap">
+        <ul class="footer_policy">
+          <li class="footer_policy_item"><a href="../company/index.html">会社概要</a></li>
+          <li class="footer_policy_item"><a href="../sitepolicy/index.html">サイトポリシー</a></li>
+          <li class="footer_policy_item"><a href="../privacy/index.html">プライバシーポリシー</a></li>
+        </ul>
+      </div>
+      <div class="footer_about">
+        <ul class="footer-icon">
+          <li><img src="../img/logo_instagram.png" alt="Instagramアイコン"></li>
+          <li><img src="../img/logo_twitter.png" alt="Twitterアイコン"></li>
+          <li><img src="../img/logo_facebook.png" alt="Facebookアイコン"></li>
+        </ul>
+        <p class="footer-text"> JSPA｜一般社団法人日本セルフプロデュース協会<br>
+          7-2 denenchofu, otaku-ku, Tokyo<br>
+          Learn More
+        </p>
+        <p class="footer-copyright">Copyright © 2021 xxxxxxxx</p>
+      </div>
+    </footer>
+
+  </body>
+</html>
